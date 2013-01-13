@@ -1,0 +1,28 @@
+<snippet>
+	<content><![CDATA[
+${1:name}Control = can.Control({
+  defaults: { view: '${1/(.+)/\L\1/g}.ejs' }
+}, {
+  'init': function( element, options ) {
+    var self = this;
+    ${1}Model.findAll( {}, function( model ) {
+      self.element.html( can.view( self.options.view, model ) )
+    })
+  },
+  /* 'li click' : function( li, event ) {
+    console.log( 'You clicked', li.text() )
+    
+    // let other controls know what happened
+    li.trigger( 'selected' );
+  } */
+})
+
+// create a ${1} with default options
+new ${1}('#${1/(.+)/\L\1/g}-control');
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>cancontrol</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

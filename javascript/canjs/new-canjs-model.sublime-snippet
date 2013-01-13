@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+${1:name}Model = can.Model({
+	findOne : "GET /${1/(.+)/\L\1/g}/{id}",
+	findAll : "GET /${1/(.+)/\L\1/g}",
+	create  : "POST /${1/(.+)/\L\1/g}",
+	update  : "PUT /${1/(.+)/\L\1/g}/{id}",
+	destroy : "DELETE /${1/(.+)/\L\1/g}/{id}"
+},{});
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>canmodel</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
